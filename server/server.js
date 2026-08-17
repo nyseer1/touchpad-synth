@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import listing from "@/routes/listing";
+import listings from "./routes/listingRoutes.js";
 
 const PORT = process.env.PORT || 3001;
 const app = express();

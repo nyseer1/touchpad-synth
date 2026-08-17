@@ -2,29 +2,19 @@
 import express from "express";
 const router = express.Router();
 //TODO
-import Listing from "@/models/listing";
-import dbConnect from "@/db/dbConnect";
+import Listing from "../models/listing.js";
+import dbConnect from "../db/dbConnect.js";
 
 //GET (ALL) (OR BY NAME REGEX) lowercase i means ignore case
 export const getAll = async (req, res) => {
     console.log("get all request was made here");
     try {
-        let name = "";
-        if (req.body && req.body.name) name = req.body.name; //make sure properties were given, including a name prop
-        const condition = { name: new RegExp(name, "i") }; //make this a fast anchored regex if # of entities reaches 100k-1M - new RegExp('^' + name) uses index to go straight to elements that start with name
-        //if condition exists, add that condition to the filter. else just get all
-        if (name !== "") {
-            const result = await Listing.find(condition);
-            console.log(`get (filter by name: ${name} ) request was made here`); //must use backticks
-            res.status(200).json(result);
-        } else {
-            const result = await Listing.find();
-            console.log("get (read all) request was made here");
-            res.status(200).json(result);
-        }
+        const result = await Listing.find({}).toArray();
+        console.log("get (read all) request was made here");
+        res.send(result).status(200);
     } catch (err) {
         //500 = error on the database(server), not client
-        res.status(500).json({ message: err.message });
+        res.send("Server error").status(500);
     }
 };
 

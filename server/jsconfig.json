@@ -1,12 +1,12 @@
 {
-    "compilerOptions": {
-        // base dir set to  project root (contains project.json)
-        "baseUrl": ".",
-        // Defined custom path aliases = clean imports:
-        "paths": {
-            "@/*": [
-                "./*"
-            ] // Maps '@/' to everything inside 'src'
-        },
+  "compilerOptions": {
+    // Set base dir to the project root (where package.json lives)
+    "baseUrl": ".",
+    // Define custom path aliases = clean imports:
+    "paths": {
+      "@/*": [
+        "./*" // This now correctly maps '@/' to everything in the fullproject directory
+      ]
     }
+  }
 }
