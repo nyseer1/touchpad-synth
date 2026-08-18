@@ -7,7 +7,7 @@ try {
     process.loadEnvFile('.env');
     console.log('.env successfully loaded');
 } catch (err) {
-    console.error("Error: .env not found, port set to default");
+    console.error("Error: .env not found, port set to default: 3001");
 }
 
 //start db connection early, it is pooled (cached) for reusability and performance
