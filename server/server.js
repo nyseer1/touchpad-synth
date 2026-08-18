@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import listingRoutes from "./routes/listingRoutes.js";
-
+import dbConnect from "./db/dbConnect.js";
 // Tolerate a missing optional file (no --env-file-if-exists equivalent in code)
 try {
     process.loadEnvFile('.env');
@@ -9,6 +9,12 @@ try {
 } catch (err) {
     console.error("Error: .env not found, port set to default");
 }
+
+//start db connection early, it is pooled (cached) for reusability and performance
+try {
+    await dbConnect();
+    console.log('Connected to DB (MongoDB)');
+} catch (err) { console.log(`error reaching server: ${err}`) };
 
 const PORT = Number(process.env.PORT) || 3001;
 const app = express();

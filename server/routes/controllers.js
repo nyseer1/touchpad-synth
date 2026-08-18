@@ -9,8 +9,7 @@ import dbConnect from "../db/dbConnect.js";
 export const getAll = async (req, res) => {
     console.log("get all request was made here");
     try {
-        const result = await Listing.find({}).toArray();
-        console.log("get (read all) request was made here");
+        const result = await Listing.find();
         res.send(result).status(200);
     } catch (err) {
         //500 = error on the database(server), not client
