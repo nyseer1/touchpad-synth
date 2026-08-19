@@ -33,7 +33,7 @@ function App() {
 			{/* todo shop image here */}
 			<h2>Bike Shop</h2>
 
-			<Link className="linkButton" href={"/api/listings/"}
+			<Link className="linkButton" to={"/listings/"}
 			><h4 className="button">Goto Shop</h4></Link>
 
 
