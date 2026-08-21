@@ -19,10 +19,11 @@
     "frontend": "npm run dev --prefix frontend",
     "server": "npm run dev --prefix frontend",
     "fullstack": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix frontend\""
-    
   },
   "dependencies": {
     "concurrently": "^10.0.5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.9"
   }
-  
 }
