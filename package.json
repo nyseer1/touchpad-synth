@@ -1,29 +1,29 @@
 {
-  "name": "fullstack-webapp",
-  "version": "1.0.0",
-  "description": "",
-  "homepage": "https://github.com/nyseer1/fullstack-webapp#readme",
-  "bugs": {
-    "url": "https://github.com/nyseer1/fullstack-webapp/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nyseer1/fullstack-webapp.git"
-  },
-  "license": "ISC",
-  "author": "Nyseer Couse",
-  "type": "commonjs",
-  "main": "./frontend/",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "frontend": "npm run dev --prefix frontend",
-    "server": "npm run dev --prefix frontend",
-    "fullstack": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix frontend\""
-  },
-  "dependencies": {
-    "concurrently": "^10.0.5"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.5.9"
-  }
+	"name": "fullstack-webapp",
+	"version": "1.0.0",
+	"description": "",
+	"homepage": "https://github.com/nyseer1/fullstack-webapp#readme",
+	"bugs": {
+		"url": "https://github.com/nyseer1/fullstack-webapp/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nyseer1/fullstack-webapp.git"
+	},
+	"license": "ISC",
+	"author": "Nyseer Couse",
+	"type": "commonjs",
+	"main": "./frontend/",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"frontend": "npm run dev --prefix frontend",
+		"server": "nodemon ./server/server.js",
+		"fullstack": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix frontend\""
+	},
+	"dependencies": {
+		"concurrently": "^10.0.5"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.5.9"
+	}
 }

@@ -41,7 +41,10 @@ export default function ListingList() {
 				console.error(`${response.status} Error: ${response.statusText}`);
 				return;
 			}
-			const entityList = await response.json();
+			const entityList = await response;
+			//TODO test to get the right json data
+			// console.log(response);
+			// console.log(response.json);
 			setListings(entityList);
 		}
 		console.log("calling getlistings");
