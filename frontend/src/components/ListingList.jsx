@@ -95,6 +95,9 @@ export default function ListingList() {
 			pagination
 			selectableRows
 			theme={inlineTheme}
+			//preset theme that has a colorMode that adjusts to system theme:
+			// theme="material"
+			// colorMode="system"
 		/>
 	);
 	// if (listings.length === 0) {
