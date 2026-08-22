@@ -30,7 +30,6 @@ function App() {
 				<h2>Bike Shop</h2>
 				{/* entity/entitylist here, outlet=childcomponent for this page in main.jsx */}
 				<Outlet />
-				list here
 				<BackToTopButton />
 				{/* poo */}
 			</div>

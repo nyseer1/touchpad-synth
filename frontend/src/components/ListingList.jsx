@@ -9,7 +9,7 @@ const columns = [
 		selector: (row) => row.price.$numberDecimal,
 		sortable: true,
 	},
-	{ name: "Salary", selector: (row) => row.salary, right: true },
+	{ name: "Sold by", selector: (row) => row.sellerName, sortable: true },
 ];
 //list of entities
 export default function ListingList() {
