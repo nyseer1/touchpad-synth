@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import DataTable from "react-data-table-component";
+import { createTheme } from "react-data-table-component";
 
 const columns = [
 	{ name: "Name", selector: (row) => row.name, sortable: true },
@@ -13,6 +14,44 @@ const columns = [
 ];
 //list of entities
 export default function ListingList() {
+	const inlineTheme = createTheme("violet", {
+		primary: "#6200EE",
+		text: {
+			primary: "#eeeeee",
+			secondary: "#eeeeee",
+			disabled: "#888888",
+		},
+		background: {
+			default: "#111111",
+			header: "#111111", // distinct header background
+		},
+		divider: { default: "#3c3746ff" },
+		selected: { default: "#ede7f6", text: "#1a1a2e" },
+		highlightOnHover: { default: "#ede7f6", text: "#1a1a2e" },
+		striped: { default: "#f3eeff", text: "#1a1a2e" },
+		button: {
+			default: "#6200EE",
+			focus: "rgba(98,0,238,0.12)",
+			hover: "rgba(98,0,238,0.08)",
+			disabled: "#d1c4e9",
+		},
+		context: { background: "#6200EE", text: "#ffffff" },
+		// Dark-mode overrides — only what changes
+		darkMode: {
+			primary: "#BB86FC",
+			text: { primary: "#e0e0e0", secondary: "#b0b0b0" },
+			background: { default: "#1a0533", header: "#240844" },
+			divider: { default: "#3d1f6e" },
+			selected: { default: "#2d1060", text: "#e0e0e0" },
+			highlightOnHover: { default: "#2d1060", text: "#e0e0e0" },
+			striped: { default: "#1e0a40", text: "#e0e0e0" },
+		},
+		// Structural
+		spacing: { rowHeight: "48px", headerHeight: "56px", cellPaddingX: "16px" },
+		typography: { fontSize: "14px", fontSizeHeader: "12px" },
+		shape: { borderRadius: "8px" },
+	});
+
 	const [listings, setListings] = useState([]);
 
 	//GET (ALL) fetch api connects to server
@@ -49,7 +88,15 @@ export default function ListingList() {
 		return;
 	}, [listings.length]); //run again if length changes
 
-	return <DataTable columns={columns} data={listings} pagination />;
+	return (
+		<DataTable
+			columns={columns}
+			data={listings}
+			pagination
+			selectableRows
+			theme={inlineTheme}
+		/>
+	);
 	// if (listings.length === 0) {
 	// 	return (
 	// 		<>
