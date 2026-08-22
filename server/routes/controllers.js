@@ -9,12 +9,12 @@ import dbConnect from "../db/dbConnect.js";
 export const getAll = async (req, res) => {
 	console.log("get all request was made here");
 	try {
-		const result = await Listing.find().exec();
+		const result = await Listing.find().exec(); //TODO can add lean() later for performance if I dont need the extra features
 		console.log(result);
-		res.status(200).send(result);
+		res.status(200).json(result);
 	} catch (err) {
 		//500 = error on the database(server), not client
-		res.send("Server error").status(500);
+		res.status(500).send("Server error");
 	}
 };
 

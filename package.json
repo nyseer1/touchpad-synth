@@ -17,8 +17,11 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"frontend": "npm run dev --prefix frontend",
+		"f": "npm run dev --prefix frontend",
 		"server": "nodemon ./server/server.js",
-		"fullstack": "concurrently \"npm run server\" \"npm run frontend\""
+		"s": "nodemon ./server/server.js",
+		"fullstack": "concurrently \"npm run server\" \"npm run frontend\"",
+		"w": "concurrently \"npm run server\" \"npm run frontend\""
 	},
 	"dependencies": {
 		"concurrently": "^10.0.5"
