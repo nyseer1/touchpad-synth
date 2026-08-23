@@ -24,7 +24,8 @@
 		"w": "concurrently \"npm run server\" \"npm run frontend\""
 	},
 	"dependencies": {
-		"concurrently": "^10.0.5"
+		"concurrently": "^10.0.5",
+		"nodemon": "^3.1.14"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.5.9"
