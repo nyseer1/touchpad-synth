@@ -2,7 +2,7 @@
 * {
 	box-sizing: border-box;
 }
-
+/* //TODO add theme styling with media queries */
 /* Set a style for all buttons */
 button {
 	width: 100%;

@@ -51,7 +51,8 @@ export default function Hamburger() {
 					<span className="hamburger-inner"></span>
 				</span>
 			</button>
-
+			{/* //TODO export this as its own component and then import it here 
+			// also it makes the background black, make it transparent so everything is still visible, or do a blur effect idk*/}
 			<div id="navbarModal" className="modal">
 				<div className="modal-content">
 					<p>Where do you want to go..</p>

@@ -1,57 +1,8 @@
 import { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
-import DataTable from "react-data-table-component";
-import { createTheme } from "react-data-table-component";
 
-const columns = [
-	{ name: "Name", selector: (row) => row.name, sortable: true },
-	{
-		name: "Price",
-		selector: (row) => row.price.$numberDecimal,
-		sortable: true,
-	},
-	{ name: "Sold by", selector: (row) => row.sellerName, sortable: true },
-];
 //list of entities
 export default function ListingList() {
-	const inlineTheme = createTheme("violet", {
-		primary: "#6200EE",
-		text: {
-			primary: "#eeeeee",
-			secondary: "#eeeeee",
-			disabled: "#888888",
-		},
-		background: {
-			default: "#111111",
-			header: "#111111", // distinct header background
-		},
-		divider: { default: "#3c3746ff" },
-		selected: { default: "#ede7f6", text: "#1a1a2e" },
-		highlightOnHover: { default: "#ede7f6", text: "#1a1a2e" },
-		striped: { default: "#f3eeff", text: "#1a1a2e" },
-		button: {
-			default: "#6200EE",
-			focus: "rgba(98,0,238,0.12)",
-			hover: "rgba(98,0,238,0.08)",
-			disabled: "#d1c4e9",
-		},
-		context: { background: "#6200EE", text: "#ffffff" },
-		// Dark-mode overrides — only what changes
-		darkMode: {
-			primary: "#BB86FC",
-			text: { primary: "#e0e0e0", secondary: "#b0b0b0" },
-			background: { default: "#1a0533", header: "#240844" },
-			divider: { default: "#3d1f6e" },
-			selected: { default: "#2d1060", text: "#e0e0e0" },
-			highlightOnHover: { default: "#2d1060", text: "#e0e0e0" },
-			striped: { default: "#1e0a40", text: "#e0e0e0" },
-		},
-		// Structural
-		spacing: { rowHeight: "48px", headerHeight: "56px", cellPaddingX: "16px" },
-		typography: { fontSize: "14px", fontSizeHeader: "12px" },
-		shape: { borderRadius: "8px" },
-	});
-
 	const [listings, setListings] = useState([]);
 
 	//GET (ALL) fetch api connects to server
@@ -88,17 +39,47 @@ export default function ListingList() {
 		return;
 	}, [listings.length]); //run again if length changes
 
+	//
+	const columns = [
+		{ name: "Name", selector: (row) => row.name, sortable: true },
+		{
+			name: "Price",
+			selector: (row) => row.price.$numberDecimal,
+			sortable: true,
+		},
+		{ name: "Sold by", selector: (row) => row.sellerName, sortable: true },
+		{ name: "Delete", selector: (row) => row.sellerName, sortable: true },
+	];
+
+	const listItems = listings.map((listItem) => (
+		<tr className="row" key={listings._id}>
+			<td>{listItem.name}</td>
+			<td>${listItem.price.$numberDecimal}</td>
+			<td className="lastColumn">
+				<span>{listItem.sellerName}</span>
+				<button type="button" className="editModal">
+					three dots ModalGoesHere
+				</button>
+			</td>
+		</tr>
+	));
+	//TODO if hover over item show trash icon for delete, if not, dont render the trash icon
+
 	return (
-		<DataTable
-			columns={columns}
-			data={listings}
-			pagination
-			selectableRows
-			theme={inlineTheme}
-			//preset theme that has a colorMode that adjusts to system theme:
-			// theme="material"
-			// colorMode="system"
-		/>
+		<div className="dataTable">
+			<table>
+				<tr className="header">
+					<th>Name (sort icon here)</th>
+					<th>Price</th>
+					<th>Sold By</th>
+				</tr>
+				{listItems}
+			</table>
+			<div className="pagination">
+				<h3>pagination here</h3>
+				<h4>page icons here</h4>
+			</div>
+		</div>
 	);
 	// if (listings.length === 0) {
 	// 	return (

@@ -1,4 +1,8 @@
-/* .className #id :keyword */
+/* 
+.className
+#id 
+:keyword 
+*/
 /* color palette */
 :root {
 	--d-bg-primary: #000;
@@ -186,10 +190,61 @@ img {
 	justify-content: center;
 }
 
+/* data table 
+table - whole table element
+td - one cell in a table row (not a header)
+tr - one table row
+th - table column header
+ */
+table {
+	font-family: arial, sans-serif;
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td {
+	text-align: left;
+	padding: 10px;
+	background-color: var(--d-bg-clickable);
+}
+tr {
+	border: 1px solid var(--d-box-shadow);
+}
+tr:first-child {
+	border: 0px solid var(--d-box-shadow);
+}
+th {
+	text-align: left;
+	padding: 8px;
+}
+/* the div that centers the data table */
+.dataTable {
+	border: 2px solid var(--d-bg-outline);
+	border-radius: 20px;
+	padding: 10px;
+}
+.lastColumn {
+	display: flex;
+	justify-content: space-between;
+	padding-right: 10%;
+}
+.pagination {
+	display: flex;
+	justify-content: space-between;
+	padding-right: 10%;
+}
+
+/* BUTTONS */
+
+button {
+	background-color: var(--d-bg-primary);
+}
+
 button:hover {
 	/* sets transition speed of all changes applied  */
 	transition: 0.1s;
-	background-color: var(--d-bg-clickable);
+	background-color: var(--d-bg-outline);
 }
 
 /* AUTO LIGHT MODE if client(user) requests light mode (DARK MODE VALUES HAVE TO BE SET FIRST IN CODE)*/
@@ -298,7 +353,6 @@ button:hover {
 
 	.floatingButton:hover {
 		width: 80;
-
 	}
 }
 
