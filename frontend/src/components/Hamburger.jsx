@@ -10,27 +10,37 @@ export default function Hamburger() {
 	function handleOpenHamburger() {
 		setIsActive(true);
 		//open modal
-		modalRef.current.style.display = "block";
+		modalContainerRef.current.style.display = "block";
 	}
 	function handleCloseModal() {
-		modalRef.current.style.display = "none";
+		modalContainerRef.current.style.display = "none";
 		setIsActive(false);
 	}
 
 	function handleClickOutside(e) {
-		if (e.target.className === "link") {
-			handleCloseModal();
-		}
+		handleCloseModal();
 	}
+
+	function handleModalClick(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		e.stopImmediatePropagation();
+		return false;
+	}
+
 	// refs
 	const modalRef = useRef(null);
+	const modalContainerRef = useRef(null);
 
 	useEffect(() => {
-		modalRef.current = document.getElementById("navbarModal");
-		window.addEventListener("click", handleClickOutside);
+		modalRef.current = document.getElementById("modal");
+		modalContainerRef.current = document.getElementById("modalContainer");
+		// window.addEventListener("click", handleClickOutside);
+		modalContainerRef.current.addEventListener("click", handleClickOutside);
+		modalRef.current.addEventListener("click", handleOpenHamburger);
 
 		return () => {
-			window.removeEventListener("click", handleClickOutside);
+			// window.removeEventListener("click", handleClickOutside);
 		};
 	});
 
@@ -53,8 +63,9 @@ export default function Hamburger() {
 			</button>
 			{/* //TODO export this as its own component and then import it here 
 			// also it makes the background black, make it transparent so everything is still visible, or do a blur effect idk*/}
-			<div id="navbarModal" className="modal">
-				<div className="modal-content">
+			{/* it needs the id for the ref function, className for css styling */}
+			<div id="modalContainer" className="modal">
+				<div id="modal" className="modal-content">
 					<p>Where do you want to go..</p>
 					<ul>
 						<li className="hamburgerItems">
@@ -81,7 +92,7 @@ export default function Hamburger() {
 						<li className="hamburgerItems">
 							<button
 								type="button"
-								className="button"
+								className="modalButton"
 								onPointerDown={handleCloseModal}
 							>
 								Back

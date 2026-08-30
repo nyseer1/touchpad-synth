@@ -2,7 +2,7 @@
 * {
 	box-sizing: border-box;
 }
-/* //TODO add theme styling with media queries */
+/* //TODO add theme styling with media queries, make background not black so i can see behind this */
 /* Set a style for all buttons */
 button {
 	width: 100%;
@@ -12,6 +12,11 @@ button {
 	height: 3rem;
 	font-size: 1rem;
 	position: relative;
+}
+
+.modalButton {
+	border: none;
+	background-color: var(--d-bg-clickable);
 }
 
 button:hover {
@@ -36,12 +41,9 @@ button:hover {
 	}
 }
 
-#navbarModal {
-	padding-top: 10%;
-}
-
 .modal {
 	display: none;
+	padding-top: 10%;
 	/* Hidden by default */
 	position: fixed;
 	/* Stay in place */
@@ -55,8 +57,8 @@ button:hover {
 	/* Full height */
 	overflow: auto;
 	/* Enable scroll if needed */
-	background-color: rgb(0, 0, 0);
-	/* Fallback color */
+	background-color: rgba(0, 0, 0, 0.01);
+	backdrop-filter: blur(10px);
 }
 
 /* Modal Content/Box */
