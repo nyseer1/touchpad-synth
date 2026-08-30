@@ -41,6 +41,7 @@ button:hover {
 	}
 }
 
+/* whole modal component */
 .modal {
 	display: none;
 	padding-top: 10%;
@@ -58,10 +59,21 @@ button:hover {
 	overflow: auto;
 	/* Enable scroll if needed */
 	background-color: rgba(0, 0, 0, 0.01);
-	backdrop-filter: blur(10px);
+	/* backdrop-filter: blur(10px); */
+	animation: blur-in 300ms 0s forwards; /* Important */
 }
 
-/* Modal Content/Box */
+/* Let's define an animation: */
+@keyframes blur-in {
+	from {
+		backdrop-filter: blur(0px);
+	}
+	to {
+		backdrop-filter: blur(10px);
+	}
+}
+
+/* Modal Content(inside box) */
 .modal-content {
 	background-color: #000000;
 	margin: 15% auto;
