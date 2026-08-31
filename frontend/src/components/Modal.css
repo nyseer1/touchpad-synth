@@ -26,6 +26,33 @@ button:hover {
 	border: none;
 }
 
+.buttonBorderless {
+	background-color: var(--d-bg-clickable);
+	color: var(--d-bg-secondary);
+	padding: 15px;
+	/* border: 1px solid var(--d-bg-outline); */
+	border-radius: 10px;
+	width: 50%;
+	max-width: 80px;
+}
+
+.buttonBorderless:hover {
+	background-color: var(--d-bg-outline);
+	transition: 0.2s;
+	width: 50%;
+	max-width: 80px;
+	box-shadow: 4px 4px 2px #000;
+}
+
+.lastColumn {
+	display: flex;
+	justify-content: space-between;
+	padding-right: 10%;
+	height: 100%;
+	line-height: 50px;
+	text-align: center;
+}
+
 /* auto light mode if client(user) requests light mode */
 @media (prefers-color-scheme: light) {
 	button {

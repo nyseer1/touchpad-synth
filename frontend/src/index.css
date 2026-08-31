@@ -112,22 +112,6 @@ h5:hover,
 	transition: 0.2s;
 }
 
-.buttonBorderless {
-	background-color: var(--d-bg-clickable);
-	color: var(--d-bg-secondary);
-	padding: 15px;
-	/* border: 1px solid var(--d-bg-outline); */
-	border-radius: 10px;
-	width: 50%;
-}
-
-.buttonBorderless:hover {
-	background-color: var(--d-bg-outline);
-	transition: 0.2s;
-	width: 50%;
-	box-shadow: 4px 4px 2px #000;
-}
-
 p {
 	padding-left: 10%;
 	padding-right: 10%;
@@ -242,11 +226,7 @@ th {
 	border-radius: 20px;
 	padding: 10px;
 }
-.lastColumn {
-	display: flex;
-	justify-content: space-between;
-	padding-right: 10%;
-}
+
 .pagination {
 	display: flex;
 	justify-content: space-between;

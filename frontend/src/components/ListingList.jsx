@@ -56,7 +56,7 @@ export default function ListingList() {
 			<td>{listItem.name}</td>
 			<td>${listItem.price.$numberDecimal}</td>
 			<td className="lastColumn">
-				<span>{listItem.sellerName}</span>
+				{listItem.sellerName}
 				<button type="button" className="buttonBorderless">
 					<HiOutlineDotsVertical />
 				</button>
