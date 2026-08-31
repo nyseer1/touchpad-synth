@@ -64,6 +64,7 @@ export default function Hamburger() {
 			{/* //TODO export this as its own component and then import it here 
 			// also it makes the background black, make it transparent so everything is still visible, or do a blur effect idk*/}
 			{/* it needs the id for the ref function, className for css styling */}
+			{/* make id props.id inside the modal code, and when importing it just say id=modalContainer */}
 			<div id="modalContainer" className="modal">
 				<div id="modal" className="modal-content">
 					<p>Where do you want to go..</p>

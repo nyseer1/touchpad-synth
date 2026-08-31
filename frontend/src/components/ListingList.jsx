@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
-
+import { HiOutlineDotsVertical } from "react-icons/hi";
 //list of entities
 export default function ListingList() {
 	const [listings, setListings] = useState([]);
@@ -57,8 +57,8 @@ export default function ListingList() {
 			<td>${listItem.price.$numberDecimal}</td>
 			<td className="lastColumn">
 				<span>{listItem.sellerName}</span>
-				<button type="button" className="editModal">
-					three dots ModalGoesHere
+				<button type="button" className="buttonBorderless">
+					<HiOutlineDotsVertical />
 				</button>
 			</td>
 		</tr>

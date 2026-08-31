@@ -96,6 +96,8 @@ h3 {
 	/* text-align: center; */
 }
 
+/* BUTTONS */
+
 h5,
 .button {
 	background-color: var(--d-bg-clickable);
@@ -108,6 +110,22 @@ h5:hover,
 .button:hover {
 	background-color: var(--d-bg-outline);
 	transition: 0.2s;
+}
+
+.buttonBorderless {
+	background-color: var(--d-bg-clickable);
+	color: var(--d-bg-secondary);
+	padding: 15px;
+	/* border: 1px solid var(--d-bg-outline); */
+	border-radius: 10px;
+	width: 50%;
+}
+
+.buttonBorderless:hover {
+	background-color: var(--d-bg-outline);
+	transition: 0.2s;
+	width: 50%;
+	box-shadow: 4px 4px 2px #000;
 }
 
 p {

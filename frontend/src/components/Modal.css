@@ -43,7 +43,7 @@ button:hover {
 
 /* whole modal component */
 .modal {
-	display: none;
+	display: block;
 	padding-top: 10%;
 	/* Hidden by default */
 	position: fixed;
