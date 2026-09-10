@@ -15,11 +15,11 @@ export default function ListingList() {
 		const entityList = await response.json();
 		//TODO test to get the right json data
 		// console.log(response.json);
-
+		console.log("woah");
 		setListings(entityList);
 		//i can call listing.propertyName to get each , ie ${listing.name} listing._id
 		listings.forEach((listing) => {
-			console.log(JSON.stringify(listing));
+			console.log(JSON.stringify(`listing`));
 		});
 	}
 
