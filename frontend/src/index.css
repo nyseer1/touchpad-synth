@@ -14,9 +14,21 @@
 	--l-bg-secondary: rgb(124, 124, 204);
 	--l-bg-outline: #aaa;
 	--l-box-shadow: rgba(212, 203, 203, 0.2);
+	/*  */
+	--purple: #de1ee8;
 }
 
-/* whole site behavior */
+/* blank space at top of page */
+.adaptive {
+	height: 6rem;
+}
+/* (adjust for small width, usually mobile phone) */
+@media (max-width: 700px) {
+	.adaptive {
+		height: 1rem;
+	}
+}
+
 html {
 	background-color: var(--d-bg-primary);
 	scroll-behavior: smooth;
@@ -245,6 +257,43 @@ button:hover {
 	background-color: var(--d-bg-outline);
 }
 
+/* synth PAD */
+.piano-board {
+	width: auto;
+	height: 40vh;
+	/* todo make sure these disable screen drag properly */
+	touch-action: none;
+	overscroll-behavior: none;
+	/* animation on render */
+	@starting-style {
+		height: 30vh;
+	}
+	background-color: var(--d-bg-outline);
+	border-radius: 2rem;
+	transition: 1s;
+}
+
+.piano-board:active {
+	background-color: var(--purple);
+	transition: 1s;
+}
+
+.synth-text {
+	padding: 2%;
+	font-size: 1rem;
+}
+.synth-text::selection {
+	background-color: transparent;
+}
+
+/* synth recording button */
+.recording {
+	background-color: #d22;
+}
+.recording:hover {
+	background-color: #f22;
+}
+
 /* AUTO LIGHT MODE if client(user) requests light mode (DARK MODE VALUES HAVE TO BE SET FIRST IN CODE)*/
 @media (prefers-color-scheme: light) {
 	html {
@@ -351,6 +400,11 @@ button:hover {
 
 	.floatingButton:hover {
 		width: 80;
+	}
+
+	/* synth */
+	.synth-text {
+		padding: 3%;
 	}
 }
 

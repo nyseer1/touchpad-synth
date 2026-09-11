@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"; //only reload components that changed in order to refresh the page
 import { StrictMode } from "react";
 import Listing from "./components/Listing";
-import ListingList from "./components/ListingList";
+import SynthPage from "./components/SynthPage.jsx";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path: "/",
-				element: <ListingList />,
+				element: <SynthPage />,
 			},
 		],
 	},

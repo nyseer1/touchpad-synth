@@ -1,2 +1,2 @@
-#### FULL STACK WEB APP TEMPLATE 
-I made this to use as a template for quickly creating new full stack web apps
+#### TouchPad-Synth
+TouchSynth is a web app synthesizer and sequencer, with a unique touchpad that lets you tap to play notes or slide to create rich tones. Easily create beautiful melodies in seconds with this fun musical instrument on desktop, laptop, or even in the palm of your hand! No music theory is required, the synth uses handpicked scales that always make stunning melodic tunes. 

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import { HiOutlineDotsVertical } from "react-icons/hi";
-//list of entities
-export default function ListingList() {
+import SynthPad from "./SynthPad";
+export default function SynthPage() {
 	const [listings, setListings] = useState([]);
 
 	//GET (ALL) fetch api connects to server
@@ -33,54 +33,40 @@ export default function ListingList() {
 	}
 
 	//do not depend on getListings it refreshes constantly
-	useEffect(() => {
-		console.log("calling getlistings");
-		getListings();
-		return;
-	}, [listings.length]); //run again if length changes
+	// useEffect(() => {
+	// 	console.log("calling getlistings");
+	// 	getListings();
+	// 	return;
+	// }, [listings.length]); //run again if length changes
 
-	//
-	const columns = [
-		{ name: "Name", selector: (row) => row.name, sortable: true },
-		{
-			name: "Price",
-			selector: (row) => row.price.$numberDecimal,
-			sortable: true,
-		},
-		{ name: "Sold by", selector: (row) => row.sellerName, sortable: true },
-		{ name: "Delete", selector: (row) => row.sellerName, sortable: true },
-	];
+	// list items
+	// const columns = [
+	// 	{ name: "Name", selector: (row) => row.name, sortable: true },
+	// 	{
+	// 		name: "Price",
+	// 		selector: (row) => row.price.$numberDecimal,
+	// 		sortable: true,
+	// 	},
+	// 	{ name: "Sold by", selector: (row) => row.sellerName, sortable: true },
+	// 	{ name: "Delete", selector: (row) => row.sellerName, sortable: true },
+	// ];
 
-	const listItems = listings.map((listItem) => (
-		<tr className="row" key={listings._id}>
-			<td>{listItem.name}</td>
-			<td>${listItem.price.$numberDecimal}</td>
-			<td className="lastColumn">
-				{listItem.sellerName}
-				<button type="button" className="buttonBorderless">
-					<HiOutlineDotsVertical />
-				</button>
-			</td>
-		</tr>
-	));
+	// const listItems = listings.map((listItem) => (
+	// 	<tr className="row" key={listings._id}>
+	// 		<td>{listItem.name}</td>
+	// 		<td>${listItem.price.$numberDecimal}</td>
+	// 		<td className="lastColumn">
+	// 			{listItem.sellerName}
+	// 			<button type="button" className="buttonBorderless">
+	// 				<HiOutlineDotsVertical />
+	// 			</button>
+	// 		</td>
+	// 	</tr>
+	// ));
+
 	//TODO if hover over item show trash icon for delete, if not, dont render the trash icon
 
-	return (
-		<div className="dataTable">
-			<table>
-				<tr className="header">
-					<th>Name (sort icon here)</th>
-					<th>Price</th>
-					<th>Sold By</th>
-				</tr>
-				{listItems}
-			</table>
-			<div className="pagination">
-				<h3>pagination here</h3>
-				<h4>page icons here</h4>
-			</div>
-		</div>
-	);
+	return <SynthPad />;
 	// if (listings.length === 0) {
 	// 	return (
 	// 		<>

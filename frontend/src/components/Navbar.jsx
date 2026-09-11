@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom"; //<a> but allows for prefetching of specified NavLinks
 import Hamburger from "./Hamburger";
-import '../index.css';
+import "../index.css";
 export default function Navbar() {
-
 	//hide on screen drag (optional)
 	// var prevScrollpos = window.pageYOffset;
 	// window.onscroll = () => {
@@ -17,7 +16,7 @@ export default function Navbar() {
 	//https://nextjs.org/docs/app/api-reference/components/NavLink
 
 	return (
-		<ul id="navbar" className="adaptive">
+		<ul id="navbar">
 			<li>
 				<Link to="/" className="logo">
 					Nyseer

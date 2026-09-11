@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
+//todo: this page will be for viewing one entity in the list of sequences/synths in my database when the project is fullstack. For now it does not work
 //one entity
 export default function Listing() {
 	const [form, setForm] = useState({

@@ -70,7 +70,7 @@ button:hover {
 
 /* whole modal component */
 .modal {
-	display: block;
+	/* display: none; */
 	padding-top: 10%;
 	/* Hidden by default */
 	position: fixed;
@@ -88,6 +88,9 @@ button:hover {
 	background-color: rgba(0, 0, 0, 0.01);
 	/* backdrop-filter: blur(10px); */
 	animation: blur-in 300ms 0s forwards; /* Important */
+}
+.modal:active {
+	display: block;
 }
 
 /* Let's define an animation: */
