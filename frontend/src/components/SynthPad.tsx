@@ -9,8 +9,6 @@ export default function SynthPage() {
 	//STATES
 	//todo make the border change on each beat so ppl can see the bpm, also an optional metronome sound that can be toggled with a button
 	const [showSynth, setShowSynth] = useState(false);
-
-	//is modal active (rendered in dom)
 	const [isModalActive, setIsModalActive] = useState(false);
 	function handleCloseModal() {
 		setIsModalActive(false);

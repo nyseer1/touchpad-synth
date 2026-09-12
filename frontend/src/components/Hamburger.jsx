@@ -7,7 +7,7 @@ import HamburgerModal from "./HamburgerModal";
 //
 export default function Hamburger() {
 	// states
-	const [isActive, setsActive] = useState(false);
+	const [isActive, setIsActive] = useState(false);
 	// funcs
 	function handleOpenModal() {
 		setIsActive(true);

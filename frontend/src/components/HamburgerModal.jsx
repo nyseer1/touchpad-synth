@@ -7,7 +7,6 @@ export default function HamburgerModal() {
 	const [isActive, setIsActive] = useState(null);
 	// funcs
 	function handleCloseModal() {
-		modalContainerRef.current.style.display = "none";
 		setIsActive(false);
 	}
 
@@ -37,7 +36,7 @@ export default function HamburgerModal() {
 				<p>Where do you want to go..</p>
 				<ul>
 					<li className="hamburgerItems">
-						<Link to="/" className="link">
+						<Link to="/#home" className="link">
 							Home
 						</Link>
 					</li>
