@@ -13,24 +13,31 @@ export default function Modal({
 	// funcs
 
 	// refs
-	// const modalContainerRef = useRef(null);
+	const modalContainerRef = useRef(null);
 
-	// useEffect(() => {
-	// 	if (isModalActive) {
-	// 		modalContainerRef.current = document.getElementById("modalContainer");
-	// 		modalContainerRef.current.addEventListener("click", handleClickOutside);
-	// 	}
+	const handleDisableClickBehind = (e) => {
+		e.preventDefault();
+	};
 
-	// 	return () => {
-	// 		// window.removeEventListener("click", handleClickOutside);
-	// 		if (isModalActive) {
-	// 			modalContainerRef.current.removeEventListener(
-	// 				"click",
-	// 				handleClickOutside,
-	// 			);
-	// 		}
-	// 	};
-	// }, [isModalActive]); //update(run again) when the prop useState changes
+	useEffect(() => {
+		if (isModalActive) {
+			modalContainerRef.current = document.getElementById("modalContainer");
+			modalContainerRef.current.addEventListener(
+				"touchstart",
+				handleDisableClickBehind,
+			);
+		}
+
+		return () => {
+			// window.removeEventListener("click", handleClickOutside);
+			if (isModalActive) {
+				modalContainerRef.current.removeEventListener(
+					"touchstart",
+					handleDisableClickBehind,
+				);
+			}
+		};
+	}, [isModalActive]); //update(run again) when the prop useState changes
 
 	return (
 		<>
@@ -38,7 +45,7 @@ export default function Modal({
 				<div
 					id="modalContainer"
 					className="modal"
-					onPointerDown={handleClickOutside}
+					onPointerUp={handleClickOutside}
 				>
 					<div id="modal" className="modal-content">
 						<p>{modalText}</p>
@@ -60,7 +67,7 @@ export default function Modal({
 								<button
 									type="button"
 									className="button"
-									onPointerDown={handleClickOutside}
+									onPointerUp={handleClickOutside}
 								>
 									Back
 								</button>

@@ -9,7 +9,7 @@ button {
 	background-color: #111;
 	color: white;
 	border: none;
-	height: 3rem;
+	height: 4rem;
 	font-size: 1rem;
 	position: relative;
 }
@@ -111,6 +111,7 @@ button:hover {
 	padding: 20px;
 	border: 1px solid #888;
 	width: 70%;
+	height: max-contentz;
 	/* Could be more or less, depending on screen size */
 }
 
