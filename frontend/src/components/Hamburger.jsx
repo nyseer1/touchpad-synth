@@ -51,7 +51,7 @@ export default function Hamburger() {
 						: "hamburger hamburger--minus"
 				}
 				type="button"
-				onPointerDown={handleOpenModal}
+				onClick={handleOpenModal}
 				id="hamburgerButton"
 			>
 				<span className="hamburger-box">

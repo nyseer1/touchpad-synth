@@ -22,7 +22,6 @@ export default function HamburgerModal() {
 	useEffect(() => {
 		modalRef.current = document.getElementById("modal");
 		modalContainerRef.current = document.getElementById("modalContainer");
-		// window.addEventListener("click", handleClickOutside);
 		modalContainerRef.current.addEventListener("click", handleClickOutside);
 
 		return () => {
