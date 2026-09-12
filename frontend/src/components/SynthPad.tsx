@@ -7,11 +7,16 @@ Tone.setContext(new Tone.Context({ latencyHint: "interactive" }));
 Tone.getContext().lookAhead = 0; // Removes the 100ms scheduling buffer
 export default function SynthPage() {
 	//STATES
-	//todo make the border change on each beat so ppl can see the bpm, also an optional metronome sound that can be toggled with a button
+
+	//MODALS
+	//delete modal
 	const [showSynth, setShowSynth] = useState(false);
 	const [isModalActive, setIsModalActive] = useState(false);
 	function handleCloseModal() {
 		setIsModalActive(false);
+	}
+	function handleOpenModal() {
+		setIsModalActive(true);
 	}
 	async function handleModalButtonPress() {
 		//todo not sure if this needs to be async, check later
@@ -27,7 +32,6 @@ export default function SynthPage() {
 
 	// We store the INDEX (0-3) in state
 	// const [osc1wave, setosc1wave] = useState(0);
-
 	const A_PENTA = ["C#", "E", "F#", "A", "B"];
 	const OCTAVES = [2, 3, 4, 5];
 
@@ -50,7 +54,6 @@ export default function SynthPage() {
 
 	const [isRecording, setIsRecording] = useState(false);
 	const [IsPlaying, setIsPlaying] = useState(true); //if transport is currently running
-	const [visual, setVisual] = useState("fluid");
 
 	//REFS
 	const isButtonHeld = useRef(false); //for playing notes while playing a recording
@@ -306,9 +309,6 @@ export default function SynthPage() {
 		};
 	};
 
-	function handleOpenModal() {
-		setIsModalActive(true);
-	}
 	// -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	return (
@@ -385,9 +385,8 @@ export default function SynthPage() {
 						modalOption={"Delete"}
 						handleClickOutside={handleCloseModal}
 					/>
-					{/* render xy pad here */}
+					{/* render touchpad here */}
 					<div className="piano-board-container">
-						{visual === "fuid" ? <span></span> : <span></span>}
 						<div
 							id="targetDiv"
 							ref={padRef}
@@ -400,6 +399,7 @@ export default function SynthPage() {
 							<p className="synth-text">Note-Filter X-Y</p>
 						</div>
 					</div>
+					{/*  */}
 					<button
 						type="button"
 						onPointerDown={async (e) => {
@@ -425,7 +425,7 @@ export default function SynthPage() {
 				//button to activate synth here
 				<button
 					type="button"
-					onPointerDown={async (e) => {
+					onClick={async (e) => {
 						handleStartAudio(); //handles asynchronous api call to web audio api
 					}}
 					// style={{position:'relative'}}

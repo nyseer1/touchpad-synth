@@ -404,7 +404,8 @@ button:hover {
 
 	/* synth */
 	.synth-text {
-		padding: 3%;
+		padding-top: 3%;
+		padding-left: 6%;
 	}
 }
 
