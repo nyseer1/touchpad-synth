@@ -22,6 +22,8 @@ export default function Modal({
 	useEffect(() => {
 		if (isModalActive) {
 			modalContainerRef.current = document.getElementById("modalContainer");
+
+			//full width&height container, steals input from background to disable clicking anything else
 			modalContainerRef.current.addEventListener(
 				"touchstart",
 				handleDisableClickBehind,
