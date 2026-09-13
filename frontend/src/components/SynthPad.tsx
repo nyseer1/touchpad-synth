@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 // import { AudioContext, OfflineAudioContext } from "standardized-audio-context";
 import * as Tone from "tone";
 import Modal from "./Modal";
-import "SynthPage.css";
+import "./SynthPad.css";
 
 Tone.setContext(new Tone.Context({ latencyHint: "interactive" }));
 Tone.getContext().lookAhead = 0; // Removes the 100ms scheduling buffer
@@ -317,10 +317,11 @@ export default function SynthPage() {
 		<>
 			<p></p>
 			{/* if this true ? (render this) : else render this */}
+			<h4 style={{ textAlign: "center" }}>Touchpad Synth </h4>
+
 			{showSynth ? (
 				<>
 					{" "}
-					<h4 style={{ textAlign: "center" }}>Touchpad Synth </h4>
 					{/* sequencer buttons */}
 					<button
 						type="button"
@@ -376,7 +377,7 @@ export default function SynthPage() {
 							Recording Off
 						</button>
 					)}
-					{/* //todo open modal here */}
+					{/* //clear loop modal here */}
 					<button type="button" onClick={handleOpenModal}>
 						Clear Loop
 					</button>
@@ -387,7 +388,7 @@ export default function SynthPage() {
 						modalOption={"Delete"}
 						handleClickOutside={handleCloseModal}
 					/>
-					{/* visual tempo indicator */}
+					{/* //todo visual tempo indicator */}
 					<div id="Bar">
 						<div id="b1" className="Beat"></div>
 						<div id="b2" className="Beat"></div>

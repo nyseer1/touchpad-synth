@@ -19,6 +19,7 @@ export default function Modal({
 		e.preventDefault();
 	};
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <dont need to render again>
 	useEffect(() => {
 		if (isModalActive) {
 			modalContainerRef.current = document.getElementById("modalContainer");
