@@ -35,7 +35,7 @@ export default function HamburgerModal() {
 				<p>Where do you want to go..</p>
 				<ul>
 					<li className="hamburgerItems">
-						<Link to="/#home" className="link">
+						<Link to="/#" className="link">
 							Home
 						</Link>
 					</li>
@@ -44,14 +44,13 @@ export default function HamburgerModal() {
 							Projects
 						</Link>
 					</li>
-					<li className="hamburgerItems">
-						{/* todo test if this works on other pages */}
+					{/* <li className="hamburgerItems">
 						<Link to="/#projects" className="link">
-							Projects
+							About Me
 						</Link>
-					</li>
+					</li> */}
 					<li className="hamburgerItems">
-						<Link to="/#contact" className="link">
+						<Link to="/contact" className="link">
 							Contact Me
 						</Link>
 					</li>

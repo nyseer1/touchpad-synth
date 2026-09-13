@@ -3,6 +3,7 @@ import { StrictMode } from "react";
 import Listing from "./components/Listing";
 import SynthPage from "./components/SynthPage.jsx";
 import NotFound404 from "./components/NotFound404.jsx";
+import Contact from "./components/Contact.jsx";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
@@ -19,6 +20,28 @@ const router = createBrowserRouter([
 			},
 		],
 	},
+
+	{
+		path: "/",
+		element: <App />,
+		children: [
+			{
+				path: "/*",
+				element: <NotFound404 />,
+			},
+		],
+	},
+	{
+		path: "/",
+		element: <App />,
+		children: [
+			{
+				path: "/contact",
+				element: <Contact />,
+			},
+		],
+	},
+
 	// //(UPDATE ONE) shows app and update single entity
 	// {
 	// 	path: "/edit/:id",
@@ -41,17 +64,6 @@ const router = createBrowserRouter([
 	// 		},
 	// 	],
 	// },
-	//TODO path not found
-	{
-		path: "/",
-		element: <App />,
-		children: [
-			{
-				path: "/*",
-				element: <NotFound404 />,
-			},
-		],
-	},
 ]);
 
 createRoot(document.getElementById("root")).render(

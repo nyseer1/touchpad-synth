@@ -143,7 +143,31 @@ button:hover {
 	background-color: var(--d-bg-outline);
 	transition: 0.2s;
 }
+.roundedButtonGroup {
+	list-style-type: none;
+	padding: 1rem;
+	overflow: hidden;
+	background: none;
+	border: none;
+	display: flex;
+	flex-direction: row;
+	/* padding-left: 20%; */
+	/* transition: top 0.3s; /* Transition effect when sliding down (and up) */
+	position: relative;
+}
 
+.roundedButton {
+	list-style-type: none;
+	padding: 1rem;
+	overflow: hidden;
+	background: none;
+	border: none;
+	display: flex;
+	flex-direction: column;
+	/* padding-left: 20%; */
+	/* transition: top 0.3s; /* Transition effect when sliding down (and up) */
+	position: relative;
+}
 p {
 	padding-left: 10%;
 	padding-right: 10%;
@@ -381,6 +405,16 @@ th {
 	.synth-text {
 		padding-top: 3%;
 		padding-left: 6%;
+	}
+	.roundedButtonGroup {
+		flex-direction: column;
+		position: relative;
+		border: none;
+		background: none;
+		/* position: relative; */
+		width: 90%;
+		display: inline-block;
+		/* padding-left: 0%; */
 	}
 }
 

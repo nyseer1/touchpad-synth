@@ -32,7 +32,7 @@ export default function Navbar() {
 				<Link to="/#projects">Projects</Link>
 			</li>
 			<li className="navbarItems">
-				<Link to="/#contact">Contact Me</Link>
+				<Link to="/contact">Contact Me</Link>
 			</li>
 			<li className="icon">
 				<Hamburger />
