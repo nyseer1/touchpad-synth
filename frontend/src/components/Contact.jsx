@@ -34,20 +34,30 @@ export default function Contact() {
 				<h3>Skills:</h3>
 				<p id="">
 					Full-Stack Web Development, Responsive UI, <br />
-					<b>Languages:</b> JavaScript (ES6+), TypeScript, Java, Python, SQL,
-					HTML5, CSS3, C++
+					<b>Languages:</b> JavaScript, TypeScript, HTML, CSS, SQL, Java, C++,
+					Python
 					<br />
 					<b>Frontend:</b> React.js, Next.js, Responsive Web Design, HTML5,
 					CSS3, State Management, Web APIs
 					<br />
-					<b>Backend:</b> Node.js, Express.js, REST APIs, Axios.js
+					<b>Backend:</b> Node.js, Express.js, RESTful API
+					<br />
+					<b>Databases:</b> MongoDB, Mongoose, PostgreSQL
+					<br />
+					<b>Dev Tools:</b> Git, GitHub, Docker, Slack
+					<br />
+					<b>Soft Skills:</b> Problem-Solving, Teamworking, Organization,
+					Communication, Time Management, Critical Thinking
 				</p>
 				<br style={{ lineHeight: 1 }} />
 			</div>
 			<div id="contact">
 				{/* test */}
-				<h1>Contact</h1>
+				<h1>Contact Me Here:</h1>
 				<p id="contact-p">
+					(Email Preferred)
+					<br></br>
+					<br></br>
 					<b>Phone:</b> <a href="tel:+1-347-579-9610">(347)-579-9610</a>
 					<br />
 					<b>Email:</b>{" "}
