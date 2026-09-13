@@ -1,0 +1,93 @@
+/* 
+.className
+#id 
+:keyword 
+*/
+/* color palette */
+:root {
+	--d-bg-primary: #000;
+	--d-bg-secondary: rgb(255, 254, 255);
+	--d-bg-outline: #333;
+	--d-bg-clickable: #111;
+	--d-box-shadow: rgba(212, 203, 203, 0.2);
+	--l-bg-primary: rgb(247, 244, 235);
+	--l-bg-secondary: rgb(124, 124, 204);
+	--l-bg-outline: #aaa;
+	--l-box-shadow: rgba(212, 203, 203, 0.2);
+	/*  */
+	--purple: #de1ee8;
+}
+
+/* synth PAD */
+.piano-board {
+	width: auto;
+	height: 40vh;
+	/* todo make sure these disable screen drag properly */
+	touch-action: none;
+	overscroll-behavior: none;
+	/* animation on render */
+	@starting-style {
+		height: 30vh;
+	}
+	background-color: var(--d-bg-outline);
+	border-radius: 2rem;
+	transition: 1s;
+}
+
+.piano-board:active {
+	background-color: var(--purple);
+	transition: 1s;
+}
+
+.synth-text {
+	padding: 2%;
+	font-size: 1rem;
+}
+.synth-text::selection {
+	background-color: transparent;
+}
+
+/* synth recording button */
+.recording {
+	background-color: #d22;
+}
+.recording:hover {
+	background-color: #f22;
+}
+
+#Bar {
+	width: 100%;
+	height: 20px;
+	position: relative;
+	margin-bottom: 10px;
+}
+.beat {
+	width: 20%;
+	height: 100%;
+	position: relative;
+	float: left;
+	background-color: black;
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+.beat.active {
+	opacity: 1;
+	transition-duration: 0.1s;
+}
+
+/* PAGE RESIZING: small width devices, usually for mobile view */
+/* Make a one column-layout instead of three-column layout */
+@media (max-width: 700px) {
+	/* synth */
+	.synth-text {
+		padding-top: 3%;
+		padding-left: 6%;
+	}
+}
+
+/* optional medium screen size breakpoint */
+/* @media (max-width: 1000px) {
+	ul {
+		padding-left: 0%;
+	}
+} */

@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 // import { AudioContext, OfflineAudioContext } from "standardized-audio-context";
 import * as Tone from "tone";
 import Modal from "./Modal";
+import "SynthPage.css";
+
 Tone.setContext(new Tone.Context({ latencyHint: "interactive" }));
 Tone.getContext().lookAhead = 0; // Removes the 100ms scheduling buffer
 export default function SynthPage() {
@@ -385,6 +387,13 @@ export default function SynthPage() {
 						modalOption={"Delete"}
 						handleClickOutside={handleCloseModal}
 					/>
+					{/* visual tempo indicator */}
+					<div id="Bar">
+						<div id="b1" className="Beat"></div>
+						<div id="b2" className="Beat"></div>
+						<div id="b3" className="Beat"></div>
+						<div id="b4" className="Beat"></div>
+					</div>
 					{/* render touchpad here */}
 					<div className="piano-board-container">
 						<div
