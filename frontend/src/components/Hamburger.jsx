@@ -25,6 +25,7 @@ export default function Hamburger() {
 	const modalRef = useRef(null);
 	const modalContainerRef = useRef(null);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <does not need to render again>
 	useEffect(() => {
 		if (isActive) {
 			modalContainerRef.current = document.getElementById("modalContainer");
