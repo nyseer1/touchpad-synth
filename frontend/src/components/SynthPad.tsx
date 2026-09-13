@@ -324,7 +324,7 @@ export default function SynthPage() {
 					{" "}
 					{/* sequencer buttons */}
 					<div className="center">
-						<ul className="TouchpadMenu">
+						<ul className="roundedButtonGroup">
 							<button
 								type="button"
 								onPointerDown={async () => {
@@ -400,14 +400,14 @@ export default function SynthPage() {
 						<div id="b4" className="Beat"></div>
 					</div>
 					{/* render touchpad here */}
-					<div className="piano-board-container">
+					<div className="touchpad-container">
 						<div
 							id="targetDiv"
 							ref={padRef}
 							onPointerDown={handlePointerDown} //automatically calls the function on pointer down (when someone touches the pad) same for others
 							onPointerUp={handlePointerUp}
 							onPointerMove={handlePointerMove}
-							className="piano-board"
+							className="touchpad"
 						>
 							{/* visual metronome indicator could go here */}
 							<input

@@ -18,7 +18,7 @@
 	--purple: #de1ee8;
 }
 
-.TouchpadMenu {
+.roundedButtonGroup {
 	list-style-type: none;
 	padding: 1rem;
 	overflow: hidden;
@@ -32,7 +32,7 @@
 }
 
 @media (max-width: 700px) {
-	.TouchpadMenu {
+	.roundedButtonGroup {
 		flex-direction: column;
 		position: relative;
 		border: none;
@@ -45,7 +45,7 @@
 }
 
 /* synth PAD */
-.piano-board {
+.touchpad {
 	width: auto;
 	height: 40vh;
 	/* todo make sure these disable screen drag properly */
@@ -60,7 +60,7 @@
 	transition: 1s;
 }
 
-.piano-board:active {
+.touchpad:active {
 	background-color: var(--purple);
 	transition: 1s;
 }
