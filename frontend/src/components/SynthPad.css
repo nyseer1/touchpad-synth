@@ -18,6 +18,32 @@
 	--purple: #de1ee8;
 }
 
+.TouchpadMenu {
+	list-style-type: none;
+	padding: 1rem;
+	overflow: hidden;
+	background: none;
+	border: none;
+	display: flex;
+	flex-direction: row;
+	/* padding-left: 20%; */
+	/* transition: top 0.3s; /* Transition effect when sliding down (and up) */
+	position: relative;
+}
+
+@media (max-width: 700px) {
+	.TouchpadMenu {
+		flex-direction: column;
+		position: relative;
+		border: none;
+		background: none;
+		/* position: relative; */
+		width: 90%;
+		display: inline-block;
+		/* padding-left: 0%; */
+	}
+}
+
 /* synth PAD */
 .piano-board {
 	width: auto;

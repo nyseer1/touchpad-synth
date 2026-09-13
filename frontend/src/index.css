@@ -18,6 +18,19 @@
 	--purple: #de1ee8;
 }
 
+/* USEFUL CLASSES FOR ALIGNING AND FORMATTING */
+.center {
+	text-align: center;
+}
+
+html {
+	background-color: var(--d-bg-primary);
+	scroll-behavior: smooth;
+	color: var(--d-bg-secondary);
+	overflow-wrap: break-word;
+	font-family: "Lucida Console", "Courier New", monospace;
+}
+
 /* blank space at top of page */
 .adaptive {
 	height: 6rem;
@@ -27,14 +40,6 @@
 	.adaptive {
 		height: 1rem;
 	}
-}
-
-html {
-	background-color: var(--d-bg-primary);
-	scroll-behavior: smooth;
-	color: var(--d-bg-secondary);
-	overflow-wrap: break-word;
-	font-family: "Lucida Console", "Courier New", monospace;
 }
 
 /* navbar */
@@ -119,7 +124,8 @@ button {
 	/* makes sure buttons dont change height when selected: */
 	min-height: 40px;
 	padding: 0.4rem;
-	margin-top: 7px;
+	margin-right: 10px;
+	margin-top: 15px;
 }
 button:hover {
 	/* sets transition speed of all changes applied  */
@@ -127,15 +133,12 @@ button:hover {
 	background-color: var(--d-bg-outline);
 }
 
-h5,
 .button {
 	background-color: var(--d-bg-clickable);
 	color: var(--d-bg-secondary);
 	padding: 15px;
 	border: 1px solid var(--d-bg-outline);
 }
-
-h5:hover,
 .button:hover {
 	background-color: var(--d-bg-outline);
 	transition: 0.2s;
@@ -326,6 +329,10 @@ th {
 /* PAGE RESIZING: small width devices, usually for mobile view */
 /* Make a one column-layout instead of three-column layout */
 @media (max-width: 700px) {
+	button {
+		margin-right: 0px;
+		margin-top: 7px;
+	}
 	ul {
 		flex-direction: column;
 		position: relative;

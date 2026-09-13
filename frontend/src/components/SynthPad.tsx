@@ -323,64 +323,68 @@ export default function SynthPage() {
 				<>
 					{" "}
 					{/* sequencer buttons */}
-					<button
-						type="button"
-						onPointerDown={async () => {
-							synth.current?.triggerRelease();
-							Tone.getTransport().stop();
-							Tone.getTransport().start();
-							setShowSynth(false);
-						}}
-					>
-						Stop
-					</button>
-					{IsPlaying ? (
-						<button
-							type="button"
-							onPointerDown={async () => {
-								setIsPlaying(false);
-								Tone.getTransport().pause(); //pause the thing scheduling the notes
-								//turn off current sounds
-								synth.current?.triggerRelease();
-							}}
-						>
-							Pause
-						</button>
-					) : (
-						<button
-							type="button"
-							onPointerDown={async () => {
-								setIsPlaying(true);
-								Tone.getTransport().start();
-							}}
-						>
-							Play
-						</button>
-					)}
-					{isRecording ? (
-						<button
-							type="button"
-							className="recording"
-							onPointerDown={async (e) => {
-								setIsRecording(false); //turn recording mode off
-							}}
-						>
-							Recording On
-						</button>
-					) : (
-						<button
-							type="button"
-							onPointerDown={async (e) => {
-								setIsRecording(true); //turn recording mode on
-							}}
-						>
-							Recording Off
-						</button>
-					)}
-					{/* //clear loop modal here */}
-					<button type="button" onClick={handleOpenModal}>
-						Clear Loop
-					</button>
+					<div className="center">
+						<ul className="TouchpadMenu">
+							<button
+								type="button"
+								onPointerDown={async () => {
+									synth.current?.triggerRelease();
+									Tone.getTransport().stop();
+									Tone.getTransport().start();
+									setShowSynth(false);
+								}}
+							>
+								Stop
+							</button>
+							{IsPlaying ? (
+								<button
+									type="button"
+									onPointerDown={async () => {
+										setIsPlaying(false);
+										Tone.getTransport().pause(); //pause the thing scheduling the notes
+										//turn off current sounds
+										synth.current?.triggerRelease();
+									}}
+								>
+									Pause
+								</button>
+							) : (
+								<button
+									type="button"
+									onPointerDown={async () => {
+										setIsPlaying(true);
+										Tone.getTransport().start();
+									}}
+								>
+									Play
+								</button>
+							)}
+							{isRecording ? (
+								<button
+									type="button"
+									className="recording"
+									onPointerDown={async (e) => {
+										setIsRecording(false); //turn recording mode off
+									}}
+								>
+									Recording On
+								</button>
+							) : (
+								<button
+									type="button"
+									onPointerDown={async (e) => {
+										setIsRecording(true); //turn recording mode on
+									}}
+								>
+									Recording Off
+								</button>
+							)}
+							{/* //clear loop modal here */}
+							<button type="button" onClick={handleOpenModal}>
+								Clear Loop
+							</button>
+						</ul>
+					</div>
 					<Modal
 						isModalActive={isModalActive}
 						handleModalButtonPress={handleModalButtonPress}
