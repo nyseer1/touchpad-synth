@@ -57,20 +57,32 @@
 
 #Bar {
 	width: 100%;
-	height: 20px;
-	position: relative;
-	margin-bottom: 10px;
-}
-.beat {
-	width: 20%;
 	height: 100%;
 	position: relative;
+	margin-bottom: 10px;
+	padding: 20px;
+}
+
+/* visual tempo indicator UI bpm thing */
+.Beat {
+	width: 25%;
+	height: 1rem;
+	position: relative;
 	float: left;
-	background-color: black;
-	opacity: 0;
+	background-color: white;
+	opacity: 0.2;
 	transition: opacity 0.5s;
 }
-.beat.active {
+/* add corners to last and first beat in bar div */
+.Beat:last-child {
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+}
+.Beat:first-child {
+	border-top-left-radius: 1rem;
+	border-bottom-left-radius: 1rem;
+}
+.Beat.active {
 	opacity: 1;
 	transition-duration: 0.1s;
 }

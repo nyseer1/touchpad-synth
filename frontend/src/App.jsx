@@ -18,7 +18,7 @@ function App() {
 	return (
 		<>
 			<Navbar />
-			<div className="adaptive">
+			<div>
 				<div id="home" className="adaptive"></div>
 				{/* todo shop image here */}
 				{/* entity/entitylist here, outlet=childcomponent for this page in main.jsx */}

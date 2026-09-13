@@ -17,6 +17,9 @@ button {
 .modalButton {
 	border: none;
 	background-color: var(--d-bg-clickable);
+	/* cursor: pointer; */
+	height: fit-content;
+	padding: 15px;
 }
 
 button:hover {

@@ -110,6 +110,11 @@ h3 {
 
 /* BUTTONS */
 
+button {
+	/* makes sure button dosent lose its cursor styling, even if in a li element */
+	cursor: pointer;
+}
+
 h5,
 .button {
 	background-color: var(--d-bg-clickable);
@@ -363,6 +368,12 @@ button:hover {
 
 	.floatingButton:hover {
 		width: 80;
+	}
+
+	/* synth */
+	.synth-text {
+		padding-top: 3%;
+		padding-left: 6%;
 	}
 }
 

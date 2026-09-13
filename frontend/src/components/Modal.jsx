@@ -57,7 +57,7 @@ export default function Modal({
 								{handleModalButtonPress !== null ? (
 									<button
 										type="button"
-										className="button"
+										className="modalButton"
 										onPointerDown={handleModalButtonPress}
 									>
 										{modalOption}
@@ -69,7 +69,7 @@ export default function Modal({
 							<li className="hamburgerItems">
 								<button
 									type="button"
-									className="button"
+									className="modalButton"
 									onPointerUp={handleClickOutside}
 								>
 									Back
