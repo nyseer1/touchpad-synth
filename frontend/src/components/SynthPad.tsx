@@ -20,7 +20,7 @@ export default function SynthPage() {
 	function handleOpenModal() {
 		setIsModalActive(true);
 	}
-	async function handleModalButtonPress() {
+	async function handleClearLoop() {
 		//todo not sure if this needs to be async, check later
 		seqData.current.length = 0; //clear all notes instantly.
 		synth.current?.triggerRelease(); //silence the currently playing synth\
@@ -151,8 +151,17 @@ export default function SynthPage() {
 
 				// time visuals to the sequence here (this code runs every step by default)
 				Tone.getDraw().schedule(() => {
-					// console.log("visuals should be happening now");
-					//
+					//VISUAL TEMPO INDICATOR
+					if (step % 4 === 0) {
+						const noteElement = document.querySelector("#b" + step);
+						//if exists (not null) animate div styling
+						if (noteElement) {
+							noteElement.classList.add("active");
+							setTimeout(() => {
+								noteElement.classList.remove("active");
+							}, 100);
+						}
+					}
 				}, time);
 			},
 			//the array is what step variable reads one by one. so step will have value of 0-15 to play note at step 0-15
@@ -195,6 +204,7 @@ export default function SynthPage() {
 		} finally {
 			console.warn("audio is ready");
 			setShowSynth(true);
+			setIsPlaying(true);
 		}
 	}
 
@@ -328,9 +338,10 @@ export default function SynthPage() {
 							<button
 								type="button"
 								onPointerDown={async () => {
+									setIsPlaying(false);
 									synth.current?.triggerRelease();
 									Tone.getTransport().stop();
-									Tone.getTransport().start();
+									// Tone.getTransport().start();
 									setShowSynth(false);
 								}}
 							>
@@ -387,17 +398,17 @@ export default function SynthPage() {
 					</div>
 					<Modal
 						isModalActive={isModalActive}
-						handleModalButtonPress={handleModalButtonPress}
+						handleModalButtonPress={handleClearLoop}
 						modalText={"Are you sure you want to delete the sequence?"}
 						modalOption={"Delete"}
 						handleClickOutside={handleCloseModal}
 					/>
 					{/* //todo visual tempo indicator */}
 					<div id="Bar">
-						<div id="b1" className="Beat"></div>
-						<div id="b2" className="Beat"></div>
-						<div id="b3" className="Beat"></div>
+						<div id="b0" className="Beat"></div>
 						<div id="b4" className="Beat"></div>
+						<div id="b8" className="Beat"></div>
+						<div id="b12" className="Beat"></div>
 					</div>
 					{/* render touchpad here */}
 					<div className="touchpad-container">
