@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"; //only r
 import { StrictMode } from "react";
 import Listing from "./components/Listing";
 import SynthPage from "./components/SynthPage.jsx";
+import NotFound404 from "./components/NotFound404.jsx";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
@@ -18,32 +19,38 @@ const router = createBrowserRouter([
 			},
 		],
 	},
-	//(UPDATE ONE) shows app and update single entity
-	{
-		path: "/edit/:id",
-		element: <App />,
-		children: [
-			{
-				path: "/edit/:id",
-				element: <Listing />,
-			},
-		],
-	},
-	//(CREATE ONE)
-	{
-		path: "/create",
-		element: <App />,
-		children: [
-			{
-				path: "/create",
-				element: <Listing />,
-			},
-		],
-	},
+	// //(UPDATE ONE) shows app and update single entity
+	// {
+	// 	path: "/edit/:id",
+	// 	element: <App />,
+	// 	children: [
+	// 		{
+	// 			path: "/edit/:id",
+	// 			element: <Listing />,
+	// 		},
+	// 	],
+	// },
+	// //(CREATE ONE)
+	// {
+	// 	path: "/create",
+	// 	element: <App />,
+	// 	children: [
+	// 		{
+	// 			path: "/create",
+	// 			element: <Listing />,
+	// 		},
+	// 	],
+	// },
 	//TODO path not found
 	{
-		path: "/*",
+		path: "/",
 		element: <App />,
+		children: [
+			{
+				path: "/*",
+				element: <NotFound404 />,
+			},
+		],
 	},
 ]);
 

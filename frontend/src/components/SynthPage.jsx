@@ -16,6 +16,7 @@ export default function SynthPage() {
 			console.error(`${response.status} Error: ${response.statusText}`);
 			return;
 		}
+
 		const entityList = await response.json();
 		//TODO test to get the right json data
 		// console.log(response.json);
