@@ -418,13 +418,7 @@ export default function SynthPage() {
 						</div>
 					</div>
 					{/*  */}
-					<button
-						type="button"
-						onPointerDown={async (e) => {
-							handleOpenHelpModal(); //handles asynchronous api call to web audio api
-						}}
-						// style={{position:'relative'}}
-					>
+					<button type="button" onClick={handleOpenHelpModal}>
 						Help
 					</button>
 					<Modal
