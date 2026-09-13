@@ -16,7 +16,7 @@ export default function Navbar() {
 	//https://nextjs.org/docs/app/api-reference/components/NavLink
 
 	return (
-		<ul id="navbar">
+		<ul id="navbar" className="navbar">
 			<li>
 				<Link to="/" className="logo">
 					Nyseer

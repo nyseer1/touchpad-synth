@@ -1,2 +1,2 @@
+// tells typescript css files are ok:
 declare module "*.css";
-// tells typescript css files are ok

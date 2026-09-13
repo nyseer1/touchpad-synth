@@ -42,9 +42,8 @@
 .synth-text {
 	padding: 2%;
 	font-size: 1rem;
-}
-.synth-text::selection {
-	background-color: transparent;
+	background: transparent;
+	border: none;
 }
 
 /* synth recording button */

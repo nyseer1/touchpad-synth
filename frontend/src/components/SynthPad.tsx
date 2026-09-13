@@ -406,7 +406,11 @@ export default function SynthPage() {
 							className="piano-board"
 						>
 							{/* visual metronome indicator could go here */}
-							<p className="synth-text">Note-Filter X-Y</p>
+							<input
+								placeholder="Tap Here to Play"
+								disabled
+								className="synth-text"
+							></input>
 						</div>
 					</div>
 					{/*  */}

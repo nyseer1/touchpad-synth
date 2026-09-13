@@ -109,10 +109,22 @@ h3 {
 }
 
 /* BUTTONS */
-
 button {
 	/* makes sure button dosent lose its cursor styling, even if in a li element */
 	cursor: pointer;
+	background-color: var(--d-bg-clickable);
+	border: 1px dotted var(--d-bg-outline);
+	border-radius: 0.4rem;
+	height: max-content;
+	/* makes sure buttons dont change height when selected: */
+	min-height: 40px;
+	padding: 0.4rem;
+	margin-top: 7px;
+}
+button:hover {
+	/* sets transition speed of all changes applied  */
+	transition: 0.1s;
+	background-color: var(--d-bg-outline);
 }
 
 h5,
@@ -248,18 +260,6 @@ th {
 	display: flex;
 	justify-content: space-between;
 	padding-right: 10%;
-}
-
-/* BUTTONS */
-
-button {
-	background-color: var(--d-bg-primary);
-}
-
-button:hover {
-	/* sets transition speed of all changes applied  */
-	transition: 0.1s;
-	background-color: var(--d-bg-outline);
 }
 
 /* AUTO LIGHT MODE if client(user) requests light mode (DARK MODE VALUES HAVE TO BE SET FIRST IN CODE)*/
