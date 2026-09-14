@@ -40,15 +40,15 @@ export default function HamburgerModal() {
 						</Link>
 					</li>
 					<li className="hamburgerItems">
-						<Link to="/#about" className="link">
+						<Link to="/contact/#projects" className="link">
 							Projects
 						</Link>
 					</li>
-					{/* <li className="hamburgerItems">
-						<Link to="/#projects" className="link">
+					<li className="hamburgerItems">
+						<Link to="/contact/#about" className="link">
 							About Me
 						</Link>
-					</li> */}
+					</li>
 					<li className="hamburgerItems">
 						<Link to="/contact" className="link">
 							Contact Me

@@ -26,10 +26,10 @@ export default function Navbar() {
 				<Link to="#home">Home</Link>
 			</li>
 			<li className="navbarItems">
-				<Link to="#about">About Me</Link>
+				<Link to="/contact/#about">About Me</Link>
 			</li>
 			<li className="navbarItems">
-				<Link to="/#projects">Projects</Link>
+				<Link to="/contact/#projects">Projects</Link>
 			</li>
 			<li className="navbarItems">
 				<Link to="/contact">Contact Me</Link>
