@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import { HiOutlineDotsVertical } from "react-icons/hi";
-// import SynthPad from "./SynthPad";
+import SynthPad from "./SynthPad";
 import React from "react";
-import { Suspense, lazy } from "react";
-const SynthPad = React.lazy(() => import("./SynthPad"));
+// import { Suspense, lazy } from "react";
+// const SynthPad = React.lazy(() => import("./SynthPad"));
 
 export default function SynthPage() {
 	const [listings, setListings] = useState([]);
