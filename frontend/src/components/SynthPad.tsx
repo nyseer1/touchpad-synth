@@ -195,6 +195,10 @@ export default function SynthPage() {
 		//async function means run this function asynchronously so other code can be executed during loading
 
 		try {
+			// !(MUST RUN FIRST) wait for audio context to start before playing audio.
+			await Tone.start(); //await says wait here until this calculation is done
+			Tone.getTransport().start(); //start transport(player)
+
 			// IOS 'silent audio' trick to fix audio being muted when IOS device has physical mute button on
 			// Create an audio context instance if WebAudio is supported
 			let context = window.AudioContext ? new window.AudioContext() : null;
@@ -215,10 +219,6 @@ export default function SynthPage() {
 				// unmuteHandle.dispose();
 				// unmuteHandle = null;
 			}
-
-			// wait for audio context to start before playing audio
-			await Tone.start(); //await says wait here until this calculation is done
-			Tone.getTransport().start(); //start transport(player)
 		} catch (error) {
 			// only runs in the browser where the window object and AudioContext are available
 			console.error("web audio api not supported !!! :(", error);

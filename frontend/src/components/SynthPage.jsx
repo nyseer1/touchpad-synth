@@ -1,41 +1,42 @@
 import { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import { HiOutlineDotsVertical } from "react-icons/hi";
-import SynthPad from "./SynthPad";
+// import SynthPad from "./SynthPad";
 import React from "react";
-// import { Suspense, lazy } from "react";
-// const SynthPad = React.lazy(() => import("./SynthPad"));
+import { Suspense, lazy } from "react";
+const SynthPad = React.lazy(() => import("./SynthPad"));
 
 export default function SynthPage() {
-	const [listings, setListings] = useState([]);
+	return <SynthPad />;
+	// const [listings, setListings] = useState([]);
 
-	//GET (ALL) fetch api connects to server
-	async function getListings() {
-		const response = await fetch(`http://localhost:3001/api/listing`);
-		if (!response.ok) {
-			console.error(`${response.status} Error: ${response.statusText}`);
-			return;
-		}
+	// //GET (ALL) fetch api connects to server
+	// async function getListings() {
+	// 	const response = await fetch(`http://localhost:3001/api/listing`);
+	// 	if (!response.ok) {
+	// 		console.error(`${response.status} Error: ${response.statusText}`);
+	// 		return;
+	// 	}
 
-		const entityList = await response.json();
-		//TODO test to get the right json data
-		// console.log(response.json);
-		console.log("woah");
-		setListings(entityList);
-		//i can call listing.propertyName to get each , ie ${listing.name} listing._id
-		listings.forEach((listing) => {
-			console.log(JSON.stringify(`listing`));
-		});
-	}
+	// 	const entityList = await response.json();
+	// 	//TODO test to get the right json data
+	// 	// console.log(response.json);
+	// 	console.log("woah");
+	// 	setListings(entityList);
+	// 	//i can call listing.propertyName to get each , ie ${listing.name} listing._id
+	// 	listings.forEach((listing) => {
+	// 		console.log(JSON.stringify(`listing`));
+	// 	});
+	// }
 
-	//DELETE (ONE)
-	async function deleteListing(id) {
-		await fetch(`http://localhost:3001/listing/${id}`, {
-			method: "DELETE",
-		});
-		const newListings = listings.filter((entity) => entity._id !== id); //rm from list
-		setListings(newListings);
-	}
+	// //DELETE (ONE)
+	// async function deleteListing(id) {
+	// 	await fetch(`http://localhost:3001/listing/${id}`, {
+	// 		method: "DELETE",
+	// 	});
+	// 	const newListings = listings.filter((entity) => entity._id !== id); //rm from list
+	// 	setListings(newListings);
+	// }
 
 	//do not depend on getListings it refreshes constantly
 	// useEffect(() => {
@@ -71,7 +72,6 @@ export default function SynthPage() {
 
 	//TODO if hover over item show trash icon for delete, if not, dont render the trash icon
 
-	return <SynthPad />;
 	// if (listings.length === 0) {
 	// 	return (
 	// 		<>
