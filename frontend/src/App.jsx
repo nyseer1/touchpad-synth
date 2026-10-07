@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import { Link, Outlet } from "react-router-dom";
 import BackToTopButton from "./components/BackToTopButton";
+import ScrollToAnchor from "./components/ScrollToAnchor";
 
 function App() {
 	// const [isDesktop, setDesktop] = useState(true);
@@ -18,6 +19,8 @@ function App() {
 	return (
 		<>
 			<Navbar />
+			<ScrollToAnchor />
+
 			<div>
 				<div id="home" className="adaptive"></div>
 				{/* todo shop image here */}

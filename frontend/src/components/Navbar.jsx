@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"; //<a> but allows for prefetching of specified NavLinks
 import Hamburger from "./Hamburger";
 import "../index.css";
-export default function Navbar() {
+export default function Navbar({ props }) {
 	//hide on screen drag (optional)
 	// var prevScrollpos = window.pageYOffset;
 	// window.onscroll = () => {
@@ -15,25 +15,67 @@ export default function Navbar() {
 	// };
 	//https://nextjs.org/docs/app/api-reference/components/NavLink
 
+	const navbarLinks = [
+		{
+			link: "/",
+			label: "Home",
+			key: "home",
+		},
+		{
+			link: "#about",
+			label: "About Me",
+			key: "about",
+		},
+		{
+			link: "#projects",
+			label: "Projects",
+			key: "projects",
+		},
+		{
+			link: "#contact",
+			label: "Contact Me",
+			key: "contact",
+		},
+	];
+	const navbarLinksBackup = [
+		{
+			link: "/",
+			label: "Home",
+			key: "home",
+		},
+		{
+			link: "/#about",
+			label: "About Me",
+			key: "about",
+		},
+		{
+			link: "/#projects",
+			label: "Projects",
+			key: "projects",
+		},
+		{
+			link: "/#contact",
+			label: "Contact Me",
+			key: "contact",
+		},
+	];
+
+	const navbarLinkslist = navbarLinks.map((navItem) => (
+		<li className="navbarLinks" key={navItem.key}>
+			{/* <a title="Home page" href={navItem.link}>Home</a> */}
+			<Link to={navItem.link}>{navItem.label}</Link>
+		</li>
+	));
+
 	return (
 		<ul id="navbar" className="navbar">
+			{/* todo arrays.map, render a list of li here. use props.navbarLinks json later */}
 			<li>
 				<Link to="/" className="logo">
 					Nyseer
 				</Link>
 			</li>
-			<li className="navbarItems">
-				<Link to="#home">Home</Link>
-			</li>
-			<li className="navbarItems">
-				<Link to="/contact/#about">About Me</Link>
-			</li>
-			<li className="navbarItems">
-				<Link to="/contact/#projects">Projects</Link>
-			</li>
-			<li className="navbarItems">
-				<Link to="/contact">Contact Me</Link>
-			</li>
+			{navbarLinkslist}
 			<li className="icon">
 				<Hamburger />
 			</li>

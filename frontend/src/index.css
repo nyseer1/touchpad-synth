@@ -27,8 +27,17 @@ html {
 	background-color: var(--d-bg-primary);
 	scroll-behavior: smooth;
 	color: var(--d-bg-secondary);
+
 	overflow-wrap: break-word;
 	font-family: "Lucida Console", "Courier New", monospace;
+}
+
+section:target {
+	@starting-style {
+		/* initial styles go here */
+		background: yellow;
+	}
+	background: transparent;
 }
 
 /* blank space at top of page */
