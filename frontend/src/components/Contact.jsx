@@ -24,7 +24,7 @@ export default function Contact() {
 			</div>
 			<div id="about">
 				{/* test */}
-				<h1>About Me:</h1>
+				<h1 id="about">About Me:</h1>
 				<p>
 					I am a passionate software developer and computer science graduate
 					with 1+ years developing full-stack web applications using React,
