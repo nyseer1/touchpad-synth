@@ -24,7 +24,7 @@ function App() {
 			key: "home",
 		},
 		{
-			link: "/about",
+			link: "/about/#about",
 			label: "About Me",
 			key: "about",
 		},
