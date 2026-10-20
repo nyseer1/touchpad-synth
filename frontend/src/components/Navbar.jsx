@@ -22,39 +22,17 @@ export default function Navbar({ props }) {
 			key: "home",
 		},
 		{
-			link: "#about",
+			link: "/about/#about",
 			label: "About Me",
 			key: "about",
 		},
 		{
-			link: "#projects",
+			link: "/about/#projects",
 			label: "Projects",
 			key: "projects",
 		},
 		{
-			link: "#contact",
-			label: "Contact Me",
-			key: "contact",
-		},
-	];
-	const navbarLinksBackup = [
-		{
-			link: "/",
-			label: "Home",
-			key: "home",
-		},
-		{
-			link: "/#about",
-			label: "About Me",
-			key: "about",
-		},
-		{
-			link: "/#projects",
-			label: "Projects",
-			key: "projects",
-		},
-		{
-			link: "/#contact",
+			link: "/about/#contact",
 			label: "Contact Me",
 			key: "contact",
 		},

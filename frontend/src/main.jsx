@@ -3,7 +3,7 @@ import { StrictMode } from "react";
 import Listing from "./components/Listing";
 import SynthPage from "./components/SynthPage.jsx";
 import NotFound404 from "./components/NotFound404.jsx";
-import Contact from "./components/Contact.jsx";
+import About from "./components/About.jsx";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
@@ -32,12 +32,12 @@ const router = createBrowserRouter([
 		],
 	},
 	{
-		path: "/contact",
+		path: "/about",
 		element: <App />,
 		children: [
 			{
-				path: "/contact",
-				element: <Contact />,
+				path: "/about",
+				element: <About />,
 			},
 		],
 	},
