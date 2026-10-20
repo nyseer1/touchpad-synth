@@ -16,9 +16,33 @@ function App() {
 	// 	return () => window.removeEventListener("resize", updateMedia);
 	// });
 
+	//sets the individual button links in navbar
+	const navbarLinks = [
+		{
+			link: "/",
+			label: "Home",
+			key: "home",
+		},
+		{
+			link: "/about/#about",
+			label: "About Me",
+			key: "about",
+		},
+		{
+			link: "/about/#projects",
+			label: "Projects",
+			key: "projects",
+		},
+		{
+			link: "/about/#contact",
+			label: "Contact Me",
+			key: "contact",
+		},
+	];
+
 	return (
 		<>
-			<Navbar />
+			<Navbar navbarLinks={navbarLinks} />
 			<ScrollToAnchor />
 
 			<div>

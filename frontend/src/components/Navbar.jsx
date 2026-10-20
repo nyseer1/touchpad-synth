@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom"; //<a> but allows for prefetching of specified NavLinks
 import Hamburger from "./Hamburger";
 import "../index.css";
-export default function Navbar({ props }) {
+export default function Navbar({ navbarLinks }) {
 	//hide on screen drag (optional)
 	// var prevScrollpos = window.pageYOffset;
 	// window.onscroll = () => {
 	// 	var currentScrollPos = window.pageYOffset;
-	// 	if (prevScrollpos > currentScrollPos) {
 	// 		document.getElementById("navbar").style.top = "0";
 	// 	} else {
 	// 		document.getElementById("navbar").style.top = "-50px";
@@ -14,29 +13,6 @@ export default function Navbar({ props }) {
 	// 	prevScrollpos = currentScrollPos;
 	// };
 	//https://nextjs.org/docs/app/api-reference/components/NavLink
-
-	const navbarLinks = [
-		{
-			link: "/",
-			label: "Home",
-			key: "home",
-		},
-		{
-			link: "/about/#about",
-			label: "About Me",
-			key: "about",
-		},
-		{
-			link: "/about/#projects",
-			label: "Projects",
-			key: "projects",
-		},
-		{
-			link: "/about/#contact",
-			label: "Contact Me",
-			key: "contact",
-		},
-	];
 
 	const navbarLinkslist = navbarLinks.map((navItem) => (
 		<li className="navbarLinks" key={navItem.key}>
